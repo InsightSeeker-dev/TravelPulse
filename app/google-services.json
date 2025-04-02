@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "61848102639",
+    "project_id": "travelpulse-2f082",
+    "storage_bucket": "travelpulse-2f082.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61848102639:android:cf4b4ecd22f5f670a65d1a",
+        "android_client_info": {
+          "package_name": "Projet.travelpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE-h9IO5u4oSsF7zMi1hfDj8EYeU16dBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

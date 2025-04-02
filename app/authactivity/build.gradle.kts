@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "Projet.travelpulse"
+    namespace = "Projet.authactivity"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "Projet.travelpulse"
+        applicationId = "Projet.authactivity"
         minSdk = 34
         targetSdk = 35
         versionCode = 1
@@ -29,26 +29,20 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation(libs.appcompat)
     implementation(libs.material)
+    implementation(libs.annotation)
+    implementation(libs.constraintlayout)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    // Firebase Authentication
-    implementation(libs.firebase.auth)
-
-    // Pour le GPS (Fused Location Provider)
-    implementation(libs.play.services.location)
-
-    // Room pour SQLite
-    implementation(libs.room.runtime)
-    annotationProcessor(libs.room.compiler)
-
-    // Pour gérer les permissions et l'UI
-    implementation(libs.activity)
-    implementation(libs.fragment)
 }
