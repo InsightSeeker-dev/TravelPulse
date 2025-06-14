@@ -1,0 +1,4 @@
+<resources>
+    <style name="Theme.TravelPulse.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TravelPulse.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
