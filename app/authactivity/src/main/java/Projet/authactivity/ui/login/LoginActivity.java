@@ -1,7 +1,7 @@
 package Projet.authactivity.ui.login;
 
 import android.app.Activity;
-
+import android.content.Intent;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
+        final Button registerButton = findViewById(R.id.button_register);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -71,15 +72,18 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 loadingProgressBar.setVisibility(View.GONE);
                 if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
+                    // Affiche l'erreur détaillée si présente
+                    if (loginResult.getErrorMessage() != null) {
+                        Toast.makeText(LoginActivity.this, loginResult.getErrorMessage(), Toast.LENGTH_LONG).show();
+                    } else {
+                        showLoginFailed(loginResult.getError());
+                    }
                 }
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
+                    setResult(Activity.RESULT_OK);
+                    finish();
                 }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
             }
         });
 
@@ -118,16 +122,31 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                String email = usernameEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString();
+                loginViewModel.login(email, password);
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Projet.authactivity.RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+
+        // Démarrer MainActivity du module 'app'
+        Intent intent = new Intent();
+        // Le premier argument est le applicationId du module 'app'
+        // Le second argument est le nom complet de la classe MainActivity
+        intent.setClassName("Projet.travelpulse", "Projet.travelpulse.MainActivity");
+        startActivity(intent);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
