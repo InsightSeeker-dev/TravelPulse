@@ -38,6 +38,15 @@
             android:paddingBottom="24dp"
             tools:text="Nom du Voyage Exemple" />
 
+        <!-- ICÔNE PLAY -->
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_play_arrow"
+            app:tint="#ABA8A8"/>
+
+
         <!-- Bouton principal rempli -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_toggle_tracking"
@@ -54,7 +63,15 @@
             app:cornerRadius="28dp"
             android:elevation="2dp"/>
 
-        <!-- Boutons outlined -->
+        <!-- ICÔNE EDIT -->
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_edit"
+            app:tint="#2196F3"/>
+
+        <!-- Bouton MODIFIER -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_edit_trip"
             android:layout_width="250dp"
@@ -71,6 +88,15 @@
             app:cornerRadius="28dp"
             android:elevation="0dp"/>
 
+        <!-- ICÔNE MAP -->
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_map"
+            app:tint="#2196F3"/>
+
+        <!-- Bouton CARTE -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_show_map"
             android:layout_width="250dp"
@@ -87,6 +113,15 @@
             app:cornerRadius="28dp"
             android:elevation="0dp"/>
 
+        <!-- ICÔNE SAVE ALT -->
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_save_alt"
+            app:tint="#2196F3"/>
+
+        <!-- Bouton EXPORT -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_export_gpx"
             android:layout_width="250dp"
