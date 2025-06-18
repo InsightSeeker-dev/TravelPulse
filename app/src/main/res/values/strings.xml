@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TravelPulse</string>
+    <string name="add_trip">Ajouter un voyage</string>
+    <string name="title_activity_add_trip">Nouveau Voyage</string>
+    <string name="prompt_trip_name">Nom du voyage</string>
+    <string name="action_save">Enregistrer</string>
 </resources>
